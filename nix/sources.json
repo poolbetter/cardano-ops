@@ -5,10 +5,10 @@
         "homepage": "https://www.turnkeylinux.org",
         "owner": "turnkeylinux",
         "repo": "aws-datacenters",
-        "rev": "a7106906e60969e917e555fd770454f72c78bb75",
-        "sha256": "0l6k6cspsb5cil5s2vypm9v7ci798x4q2zv6hyavlvwy1g2gnggf",
+        "rev": "f9ec7622204c6797517108a5d969cec2cd9ef4e7",
+        "sha256": "09vdzqv937ps0whn8rz4f4vsbj5zshiw0346a3hhsw6alranwc99",
         "type": "tarball",
-        "url": "https://github.com/turnkeylinux/aws-datacenters/archive/a7106906e60969e917e555fd770454f72c78bb75.tar.gz",
+        "url": "https://github.com/turnkeylinux/aws-datacenters/archive/f9ec7622204c6797517108a5d969cec2cd9ef4e7.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "cardano-benchmarking": {
@@ -17,10 +17,10 @@
         "homepage": null,
         "owner": "input-output-hk",
         "repo": "cardano-benchmarking",
-        "rev": "6fe78de57946045633fe896cbd7f945d1f58fecd",
-        "sha256": "1dfx5f41a2pinw09snjr8agmahhiv19qv5ibbijlbxnnqcq8bnz9",
+        "rev": "58a51497b860fa5a7a7662385adaf51707257ae8",
+        "sha256": "0x47ky22icalijqvyzw5yv0vwkk7f17vayyqam8ailhr8wv8pvxj",
         "type": "tarball",
-        "url": "https://github.com/input-output-hk/cardano-benchmarking/archive/6fe78de57946045633fe896cbd7f945d1f58fecd.tar.gz",
+        "url": "https://github.com/input-output-hk/cardano-benchmarking/archive/58a51497b860fa5a7a7662385adaf51707257ae8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "cardano-byron-proxy": {
@@ -84,15 +84,15 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "cardano-node": {
-        "branch": "release/1.16.x",
+        "branch": "master",
         "description": null,
         "homepage": null,
         "owner": "input-output-hk",
         "repo": "cardano-node",
-        "rev": "b218bca02d31f22407e586ec949c7d3637e8c1d3",
-        "sha256": "09xl8n91pg6k972if46nqdsg6hl8zny9h7563dc9aj6j17xanpcx",
+        "rev": "0191ff56d194b6ac074af0d51e67493c14e08ffa",
+        "sha256": "1mwx751w6f59bhf8r4n72s0gy0fz5w4ss5jcds0fs8nvjlk7y3c6",
         "type": "tarball",
-        "url": "https://github.com/input-output-hk/cardano-node/archive/b218bca02d31f22407e586ec949c7d3637e8c1d3.tar.gz",
+        "url": "https://github.com/input-output-hk/cardano-node/archive/0191ff56d194b6ac074af0d51e67493c14e08ffa.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "cardano-rest": {
