@@ -352,7 +352,7 @@ op_bench_start() {
                op_wait_for_nonempty_block 200
 
                op_wait_for_empty_blocks \
-                 "$(profjq "${prof}" .run.finish_patience)" \
+                 "$(profjq "${prof}" .tolerances.finish_patience)" \
                  fetch_systemd_unit_startup_logs
                ret=$?
              }
@@ -414,6 +414,9 @@ EOF
         cp "${deploylog}"     "${dir}"/logs/deploy.log
         mv "${deploylog}"     runs/"${tag}".deploy.log
 
+        ## TODO:  ideally, fetch this from the machines:
+        cp "keys/genesis.json" "${dir}"
+
         local date=$(date "+%Y-%m-%d-%H.%M.%S") stamp=$(date +%s)
         touch                 "${dir}/${date}"
 
@@ -436,6 +439,7 @@ EOF
     , \"${deployfilename[explorer]}\"
     , \"${deployfilename[producers]}\"
     , \"meta.json\"
+    , \"genesis.json\"
 
     , \"meta/cluster.raw.json\"
 
@@ -534,7 +538,7 @@ op_wait_for_empty_blocks() {
                    test -z "${verbose}" || echo -n "=${patience}"
               else anyblock_patience=$((anyblock_patience - 1)); fi; done
            patience=$((patience - 1))
-           test -z "${verbose}" || echo -n "p${patience}"
+           test -z "${verbose}" || echo -n "p${patience}a${anyblock_patience}t$(jq .txcounts <<<$news)"
         done | tee "last-run/logs/block-arrivals.gauge"
         echo
 

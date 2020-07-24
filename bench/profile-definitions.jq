@@ -14,7 +14,9 @@
 ##  2. The topology file determines the BFT/stake pool composition.
 ##  3. The era and composition determine base genesis/generator parameters.
 ##  4. The era determines sets of genesis/generator profiles,
-##     which yield a set product of _final, benchmarking profiles._
+##     a set product of which defines _benchmarking profiles_,
+##     which are then each extended with era tolerances,
+##     yielding _final benchmarking profiles_.
 ##
 
 def era_genesis_params($era; $composition):
@@ -89,6 +91,17 @@ def era_generator_profiles($era):
   , { txs:  3000, add_tx_size: 100, io_arity: 1,  tps: 100 }
   ]
 } | .[$era];
+
+def era_tolerances($era):
+{ common:
+  {}
+, byron:
+  { finish_patience:         7
+  }
+, shelley:
+  { finish_patience:         15
+  }
+} | (.common + .[$era]);
 
 def generator_aux_profiles:
 [ { name: "short"

@@ -106,8 +106,7 @@ def profile_name($gtor; $gsis):
 | era_generator_params($era)             as $generator_params
 | era_genesis_params($era; $composition) as $genesis_params
 
-| { finish_patience:         7
-  } as $run_defaults
+| era_tolerances($era)                   as $era_tolerances
 
 ## For all IO arities and block sizes:
 | [[ $genesis_profiles
@@ -138,11 +137,11 @@ def profile_name($gtor; $gsis):
         })
       , genesis:
         ($genesis_params + $genesis)
-      , run:
-        ($run_defaults +
+      , tolerances:
+        ($era_tolerances +
         { finish_patience:
             ## TODO:  fix ugly
-            ($generator.finish_patience // $run_defaults.finish_patience)
+            ($generator.finish_patience // $era_tolerances.finish_patience)
         })
       }}
   )
