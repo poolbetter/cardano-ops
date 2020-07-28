@@ -65,6 +65,10 @@ in {
       TraceTxOutbound                   = true;
       TraceTxSubmissionProtocol         = true;
 
+      defaultScribes = [
+        [ "StdoutSK" "stdout" ]
+        [ "FileSK"   "/var/lib/cardano-node/logs/generator.json" ]
+      ];
       setupScribes = [
         { scKind = "StdoutSK"; scName = "stdout"; scFormat = "ScJson"; }
         { scKind = "FileSK"; scName = "/var/lib/cardano-node/logs/generator.json"; scFormat = "ScJson";
